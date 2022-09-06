@@ -19,9 +19,10 @@ namespace BusinessLogic.Commands
             
             List<Consumption> memberConsumptions = new ConsumptionRepository().GetConsumptionByMember(entity);
 
-            double total = this.CalculateTotalReceivable(memberConsumptions);
+            double total = CalculateTotalReceivable(memberConsumptions);
+            int totalCubes = CalculateTotalCubes(memberConsumptions);
 
-            view.ShowResult(total);            
+            view.ShowResult(entity.ID,totalCubes,total);               
         }
 
         private double CalculateTotalReceivable(List<Consumption> memberConsumptions)
@@ -31,6 +32,17 @@ namespace BusinessLogic.Commands
             {
                 total += item.Value * WaterPrice;
             }
+            return total;
+        }
+
+        private int CalculateTotalCubes(List<Consumption> memberConsumptions)
+        {
+            int total = 0;
+            foreach (Consumption item in memberConsumptions)
+            {
+                total += item.Value;
+            }
+
             return total;
         }
     }
