@@ -17,6 +17,7 @@ namespace Presentation.View
             Console.WriteLine("======================================");
             Console.WriteLine("1. Ingrese el id del nuevo socio: ");
             input.fields.Add("ID", Console.ReadLine());
+
             Console.WriteLine("1. Ingrese el nombre del nuevo socio: ");
             input.fields.Add("FirstName", Console.ReadLine());
             Console.WriteLine("1. Ingrese el Apellido del nuevo socio: ");
