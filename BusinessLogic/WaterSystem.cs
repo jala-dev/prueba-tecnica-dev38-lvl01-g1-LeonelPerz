@@ -44,7 +44,7 @@ namespace BusinessLogic
                     new MemberInfoRequest().Execute();
                     break;
                 case 4:
-                    new SaveUser().Execute();
+                    new SaveMember().Execute();
                     break;
                 case 5:
                     new SavePayment().Execute();

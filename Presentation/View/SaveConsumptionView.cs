@@ -8,7 +8,7 @@ namespace Presentation.View
     {        
         public InputData RequestData()
         {            
-            return this.Show();
+            return Show();
         }
 
         private InputData Show()

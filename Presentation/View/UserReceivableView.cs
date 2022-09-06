@@ -21,9 +21,9 @@ namespace Presentation.View
             return input;
         }
 
-        public void ShowResult(int id,int totalCubes, double total)
+        public void ShowResult(int id,int totalCubes, double total, string nombre)
         {
-            Console.WriteLine("El consumo del socio {0} es de {1} cubos. La deuda actual es de {2} Bs.", id,totalCubes, total);
+            Console.WriteLine("El consumo del socio {0},correspondiente a {3} , es de {1} cubos. La deuda actual es de {2} Bs.", id,totalCubes, total, nombre);
             Console.WriteLine("R. La deuda total del socio es: {0}",total);
             Console.WriteLine("======================================");
         }

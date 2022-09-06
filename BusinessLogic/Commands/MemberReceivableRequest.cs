@@ -13,16 +13,20 @@ namespace BusinessLogic.Commands
         public void Execute()
         {
             UserReceivableView view = new UserReceivableView();
+            
             InputData data = view.RequestData();
+           
             Member entity = new Member();
             entity.ID = int.Parse(data.fields["CodigoSocio"]);
+            
+            
             
             List<Consumption> memberConsumptions = new ConsumptionRepository().GetConsumptionByMember(entity);
 
             double total = CalculateTotalReceivable(memberConsumptions);
             int totalCubes = CalculateTotalCubes(memberConsumptions);
 
-            view.ShowResult(entity.ID,totalCubes,total);               
+            view.ShowResult(entity.ID,totalCubes,total, entity.FirstName);               
         }
 
         private double CalculateTotalReceivable(List<Consumption> memberConsumptions)

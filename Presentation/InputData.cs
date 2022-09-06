@@ -8,6 +8,8 @@ namespace Presentation
     {
         public Dictionary<string, string> fields;
 
+
+
         public InputData()
         {
             fields = new Dictionary<string, string>();
